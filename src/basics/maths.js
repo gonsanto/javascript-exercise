@@ -35,7 +35,7 @@ export function roundNumberToOneDecimals(n) {
 export function computeAverage(grades) {
   for (const grade of grades) {
     if (typeof grade !== "number" || Number.isNaN(grade)) {
-      throw new Error("Le tableau contient une valeur invalide.");
+      throw new Error;
     }
   }
 
@@ -47,5 +47,12 @@ export function computeAverage(grades) {
  * @return {number} rounded average to 1 decimal
  */
 export function roundedAverage(grades) {
-  // Write your code here
+  for (const grade of grades) {
+    if (typeof grade !== "number" || Number.isNaN(grade)) {
+      throw new Error
+    }
+  }
+
+  const average = grades.reduce((total, grade) => total + grade) / grades.length
+  return (Math.round(average * 10) / 10)
 }
