@@ -1,3 +1,5 @@
+import { SocketAddress } from "net"
+
 /**
  * @param {number} diameter
  * @return {number} sphere volume
@@ -31,7 +33,13 @@ export function roundNumberToOneDecimals(n) {
  * @return {number} average with full precision
  */
 export function computeAverage(grades) {
-  // Write your code here
+  for (const grade of grades) {
+    if (typeof grade !== "number" || Number.isNaN(grade)) {
+      throw new Error("Le tableau contient une valeur invalide.");
+    }
+  }
+
+  return grades.reduce((total, grade) => total + grade) / grades.length;
 }
 
 /**
