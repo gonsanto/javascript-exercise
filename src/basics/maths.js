@@ -3,8 +3,16 @@
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  // Write your code here
+  if (diameter === 0) {
+    return diameter
+  }
+  if (!Number.isNaN(diameter) && diameter > 0) {
+    return diameter = (4 / 3) * Math.PI * ((diameter / 2) ** 3)
+  } else {
+    throw new Error
+  }
 }
+
 
 /**
  * @param {number} n
