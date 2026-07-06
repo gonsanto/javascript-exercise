@@ -10,7 +10,11 @@
  * The values of the properties should be "Toto", "Tutu"
  */
 export function createUserObject() {
-  // Write your code here
+  const object = {
+    first_name: "Toto",
+    last_name: "Tutu"
+  };
+  return object
 }
 
 /**
