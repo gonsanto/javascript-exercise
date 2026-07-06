@@ -3,7 +3,8 @@
  * @return {array<string>} An array with all words isolated, and with empty strings removed
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
-  // Write your code here
+  array = array.flatMap(el => el.split(" "));
+  return array.filter(el => el.trim())
 }
 
 /**
