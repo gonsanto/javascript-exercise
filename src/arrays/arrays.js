@@ -14,7 +14,7 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
-  // Write your code here
+  return [...array1, ...array2];
 }
 
 /**
