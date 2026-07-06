@@ -23,10 +23,6 @@ export function concatenateArrays(array1, array2) {
  * @param {...*} newElements The new elements to insert at the given position
  * @return {array<*>} A new array with the replacements applied. The original array must not be modified.
  */
-export function replaceElementsInArrayAtAGivenPlace(
-  array,
-  index,
-  ...newElements
-) {
-  // Write your code here
+export function replaceElementsInArrayAtAGivenPlace(array, index, ...newElements) {
+  return array.toSpliced(index, newElements.length, ...newElements)
 }
