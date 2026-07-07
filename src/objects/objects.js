@@ -42,7 +42,7 @@ export function iteratesThroughObjectValuesAndProperties(object) {
 
 /**
  * Return the name of the youngest and the oldest user in the array.
- * The original array must not be modified.
+ * The original array must not be modified.q
  * @param {Array<{name: string, age: number}>} users
  * @return {{younger: string, older: string}}
  */

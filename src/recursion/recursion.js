@@ -6,7 +6,22 @@
  * @return {number} The factorial of n
  */
 export function factorial(n) {
-  // Write your code here
+  if (isNaN(n) || n < 0 || n % 1 !== 0 || n === null) {
+    throw Error
+  } else if (n === 0) {
+    return 1
+  }
+
+  if (n != 1) {
+    let next = n - 1;
+    n = n * next;
+    next--;
+    while (next > 1) {
+      n = n * next
+      next--;
+    }
+  }
+  return n
 }
 
 /**
