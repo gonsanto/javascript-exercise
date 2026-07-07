@@ -5,6 +5,8 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
  */
 
+import { stringify } from "querystring";
+
 /**
  * @return {Object} you should return a new object containing two properties, first_name and last_name.
  * The values of the properties should be "Toto", "Tutu"
@@ -60,7 +62,7 @@ export function retrieveMaximumMinimumUserAges(users) {
  * @return {Object} An object retrieved by parsing the string
  */
 export function parseJavaScriptObjectNotation(string) {
-  // Write your code here
+  return JSON.parse(string)
 }
 
 /**
