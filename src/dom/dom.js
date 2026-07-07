@@ -28,5 +28,10 @@ export function addElementsInDOM() {
  * @param {array<{name: string, color: string}>} listElements
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
-  // Write your code here
+  const container = document.getElementById("add-list-here");
+  container.innerHTML = `
+    <ul>
+      ${listElements.map((el) => { return `<li style="background-color: ${el.color};">${el.name}</li>` })}
+    </ul>
+  `;
 }
