@@ -32,5 +32,13 @@ export function factorial(n) {
  * @return {number} The nth Fibonacci number
  */
 export function fibonacci(n) {
-  // Write your code here
+  if (isNaN(n) || n < 0 || n % 1 !== 0 || n === null) {
+    throw Error
+  } else {
+    let a = 0; let b = 1;
+    for (let i = 2; i <= n; i++) {
+      const temp = a; a = b; b = temp + b;
+    }
+    return n === 0 || n === 1 ? n : b
+  }
 }
