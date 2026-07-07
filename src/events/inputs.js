@@ -14,7 +14,17 @@ export function displayInputContentInAlertOnEnterKey() {
  * the text should be added as a new item in the list with id "list".
  */
 export function addElementsInListOnEnterKey() {
-  // Write your code here
+  const htmlInput = document.getElementById("list-input")
+  const itemList = document.getElementById("list")
+
+  function addElement() {
+    if (htmlInput.value !== "") {
+      itemList.innerHTML += `<li>${htmlInput.value}</li>`
+      htmlInput.value = "";
+    }
+  }
+  htmlInput.addEventListener("keydown", addElement)
+  htmlInput.addEventListener("change", addElement)
 }
 
 /**
