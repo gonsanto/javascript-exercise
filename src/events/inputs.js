@@ -4,8 +4,10 @@
  * If the input is empty, you should not trigger the alert.
  */
 export function displayInputContentInAlertOnEnterKey() {
-  const input = document.getElementById("write-some-text")
-  input.addEventListener("keydown", () => { window.alert(input.value) });
+  const input = document.getElementById('write-some-text')
+  input.addEventListener('keydown', () => {
+    window.alert(input.value)
+  })
 }
 
 /**
@@ -14,17 +16,17 @@ export function displayInputContentInAlertOnEnterKey() {
  * the text should be added as a new item in the list with id "list".
  */
 export function addElementsInListOnEnterKey() {
-  const htmlInput = document.getElementById("list-input")
-  const itemList = document.getElementById("list")
+  const htmlInput = document.getElementById('list-input')
+  const itemList = document.getElementById('list')
 
   function addElement() {
-    if (htmlInput.value !== "") {
+    if (htmlInput.value !== '') {
       itemList.innerHTML += `<li>${htmlInput.value}</li>`
-      htmlInput.value = "";
+      htmlInput.value = ''
     }
   }
-  htmlInput.addEventListener("keydown", addElement)
-  htmlInput.addEventListener("change", addElement)
+  htmlInput.addEventListener('keydown', addElement)
+  htmlInput.addEventListener('change', addElement)
 }
 
 /**
@@ -32,8 +34,8 @@ export function addElementsInListOnEnterKey() {
  * Use the same list as the previous exercise. "#list"
  */
 export function removeElementsFromListWhenClicked() {
-  const itemList = document.getElementById("list")
-  itemList.addEventListener("click", (el) => {
+  const itemList = document.getElementById('list')
+  itemList.addEventListener('click', (el) => {
     const targetedElement = el.target
     targetedElement.remove()
   })

@@ -3,8 +3,7 @@
  * @return {array<string>} An array with all words isolated, and with empty strings removed
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
-  array = array.flatMap(el => el.split(" "));
-  return array.filter(el => el.trim())
+  return array.flatMap((el) => el.split(' ')).filter((el) => el.trim())
 }
 
 /**
@@ -14,7 +13,7 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
-  return [...array1, ...array2];
+  return [...array1, ...array2]
 }
 
 /**
@@ -23,6 +22,10 @@ export function concatenateArrays(array1, array2) {
  * @param {...*} newElements The new elements to insert at the given position
  * @return {array<*>} A new array with the replacements applied. The original array must not be modified.
  */
-export function replaceElementsInArrayAtAGivenPlace(array, index, ...newElements) {
+export function replaceElementsInArrayAtAGivenPlace(
+  array,
+  index,
+  ...newElements
+) {
   return array.toSpliced(index, newElements.length, ...newElements)
 }

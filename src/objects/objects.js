@@ -5,7 +5,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
  */
 
-import { stringify } from "querystring";
+import { stringify } from 'node:querystring'
 
 /**
  * @return {Object} you should return a new object containing two properties, first_name and last_name.
@@ -13,9 +13,9 @@ import { stringify } from "querystring";
  */
 export function createUserObject() {
   const object = {
-    first_name: "Toto",
-    last_name: "Tutu"
-  };
+    first_name: 'Toto',
+    last_name: 'Tutu',
+  }
   return object
 }
 
@@ -24,7 +24,7 @@ export function createUserObject() {
  * @return {string} A concatenation of the first and last name, separated with a space
  */
 export function accessPropertiesInObjects(object) {
-  return object.first_name + " " + object.last_name
+  return `${object.first_name} ${object.last_name}`
 }
 
 /**
@@ -35,8 +35,8 @@ export function accessPropertiesInObjects(object) {
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
   return {
-    keys: Object.keys(object).map(el => el.toUpperCase()),
-    values: Object.values(object).map(el => el.toLowerCase())
+    keys: Object.keys(object).map((el) => el.toUpperCase()),
+    values: Object.values(object).map((el) => el.toLowerCase()),
   }
 }
 
@@ -47,7 +47,9 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  const sortedList = Object.values(users).slice().sort((a, b) => a.age - b.age);
+  const sortedList = Object.values(users)
+    .slice()
+    .sort((a, b) => a.age - b.age)
 
   return {
     younger: sortedList[0].name,

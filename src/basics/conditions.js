@@ -13,11 +13,10 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
-  if (typeof n === "number" && !Number.isNaN(n)) {
-    return n > 2;
-  } else {
-    throw new Error
+  if (typeof n === 'number' && !Number.isNaN(n)) {
+    return n > 2
   }
+  throw new Error()
 }
 
 /**
@@ -26,12 +25,11 @@ export function isBiggerThan2(n) {
  * @return {boolean} true if n is a multiple of m
  */
 export function isMult(n, m) {
-  if (typeof n === "number" && typeof m === "number") {
+  if (typeof n === 'number' && typeof m === 'number') {
     if (Number.isNaN(n) || Number.isNaN(m)) {
-      throw new Error
+      throw new Error()
     }
     return n % m === 0
-  } else {
-    throw new Error
   }
+  throw new Error()
 }

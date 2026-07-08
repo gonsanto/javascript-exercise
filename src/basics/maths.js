@@ -1,4 +1,4 @@
-import { SocketAddress } from "net"
+import { SocketAddress } from 'node:net'
 
 /**
  * @param {number} diameter
@@ -9,22 +9,21 @@ export function computeSphereVolume(diameter) {
     return diameter
   }
   if (!Number.isNaN(diameter) && diameter > 0) {
-    return diameter = (4 / 3) * Math.PI * ((diameter / 2) ** 3)
+    return diameter = (4 / 3) * Math.PI * (diameter / 2) ** 3
   } else {
-    throw new Error
+    throw Error()
   }
 }
-
 
 /**
  * @param {number} n
  * @return {number} number rounded to one decimal
  */
 export function roundNumberToOneDecimals(n) {
-  if (!Number.isNaN(n) && typeof n === "number") {
-    return n = (Math.round(n * 10) / 10)
+  if (!Number.isNaN(n) && typeof n === 'number') {
+    return n = Math.round(n * 10) / 10
   } else {
-    throw new Error
+    throw Error()
   }
 }
 
@@ -34,12 +33,12 @@ export function roundNumberToOneDecimals(n) {
  */
 export function computeAverage(grades) {
   for (const grade of grades) {
-    if (typeof grade !== "number" || Number.isNaN(grade)) {
-      throw new Error;
+    if (typeof grade !== 'number' || Number.isNaN(grade)) {
+      throw Error()
     }
   }
 
-  return grades.reduce((total, grade) => total + grade) / grades.length;
+  return grades.reduce((total, grade) => total + grade) / grades.length
 }
 
 /**
@@ -48,11 +47,11 @@ export function computeAverage(grades) {
  */
 export function roundedAverage(grades) {
   for (const grade of grades) {
-    if (typeof grade !== "number" || Number.isNaN(grade)) {
-      throw new Error
+    if (typeof grade !== 'number' || Number.isNaN(grade)) {
+      throw Error()
     }
   }
 
   const average = grades.reduce((total, grade) => total + grade) / grades.length
-  return (Math.round(average * 10) / 10)
+  return Math.round(average * 10) / 10
 }

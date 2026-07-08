@@ -7,22 +7,21 @@
  * Handle potential network errors gracefully.
  */
 export function fetchDataOnClick() {
-  const button = document.getElementById("click-to-fetch");
-  const display = document.getElementById("display-here");
+  const button = document.getElementById('click-to-fetch')
+  const display = document.getElementById('display-here')
 
-  button.addEventListener("click", async function () {
-    const url = "https://api.github.com/octocat";
+  button.addEventListener('click', async () => {
+    const url = 'https://api.github.com/octocat'
     try {
-      const response = await fetch(url);
+      const response = await fetch(url)
       if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
+        throw new Error(`Response status: ${response.status}`)
       }
 
-      const result = await response.text();
-      display.textContent = result;
+      const result = await response.text()
+      display.textContent = result
     } catch (error) {
-      console.error(error.message);
+      console.error(error.message)
     }
-  });
+  })
 }
-
