@@ -30,7 +30,31 @@ let enteringColor = ''
  * 3. When the input loses focus, reset the border color to the one it had before focus.
  */
 export function hoverFocusAndBlur() {
-  // Write your code here
+  const input = document.getElementById("focus-me");
+  const originalColor = input.style.borderColor;
+
+  input.addEventListener("mouseenter", () => {
+    const [label1, label2] = document.querySelectorAll("label");
+    const [originalText1, originalText2] = [label1.textContent, label2.textContent];
+    label1.textContent = "Yes, you hover me !";
+    label2.textContent = "Yes, you hover me !";
+  });
+
+  input.addEventListener("mouseleave", () => { label1.textContent = originalText1; label2.textContent = originalText2; });
+  input.addEventListener("focus", () => {
+    let newColor;
+    const usedColors = [];
+    while (!newColor || usedColors.includes()) {
+      const o = Math.round
+      const r = Math.random
+      const s = 255
+      newColor = `rgba(${o(r() * s)},${o(r() * s)},${o(r() * s)})`
+    }
+    usedColors.push(newColor);
+    input.style.borderColor = newColor;
+  });
+
+  input.addEventListener("blur", () => input.style.borderColor = originalColor);
 }
 
 /**
