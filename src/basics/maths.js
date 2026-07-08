@@ -9,10 +9,9 @@ export function computeSphereVolume(diameter) {
     return diameter
   }
   if (!Number.isNaN(diameter) && diameter > 0) {
-    return diameter = (4 / 3) * Math.PI * (diameter / 2) ** 3
-  } else {
-    throw Error()
+    return (4 / 3) * Math.PI * (diameter / 2) ** 3
   }
+  throw Error()
 }
 
 /**
@@ -21,10 +20,9 @@ export function computeSphereVolume(diameter) {
  */
 export function roundNumberToOneDecimals(n) {
   if (!Number.isNaN(n) && typeof n === 'number') {
-    return n = Math.round(n * 10) / 10
-  } else {
-    throw Error()
+    return Math.round(n * 10) / 10
   }
+  throw Error()
 }
 
 /**
